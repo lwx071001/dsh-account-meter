@@ -1,5 +1,17 @@
 # @local/account-balance — 安装说明
 
+> **English quick start** — this document is in Chinese; the short version in English is:
+>
+> A client plugin for the **DSH Harness Web UI**. It shows four live figures in the stats strip
+> below the composer (balance, this conversation's tokens, running time, tokens/sec) and adds a
+> **Settings → Account & stats** page with hourly / daily / monthly usage and cost charts.
+>
+> Install: clone the repo, then ask your agent to run
+> `plugin_manager  action: install_bundle  target: <your clone path>/plugin` — replace the target
+> with your own path (`plugin/` is the first level inside the repo root). Then **refresh the page
+> (F5)**. Prerequisite: you already use DSH Harness. Licence: [MIT](../LICENSE).
+> Full English documentation: [`../README.md`](../README.md).
+
 在**输入框下方那条统计带**里（内建 `stats` 药丸右侧）显示四个实时数字，并在**设置 → 账户与统计**
 里提供一页开关与一份用量台账（分时 / 每天 / 每月曲线，总 token、平均每秒总 token、平均每秒输出
 token、每百万与每千万 token 的金额；分时图可任选一天与时段）。
