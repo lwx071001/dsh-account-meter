@@ -12,6 +12,10 @@ token pill), and adds a **Settings → Account & stats** page with switches plus
 tokens per second, and cost per million and per ten million tokens; the hourly chart can be
 narrowed to any one day and any sub-range).
 
+<img width="484" alt="The status row under the composer: balance ¥5.42 · this chat 213.9M tok · 1h06m · 53.5K tok/s" src="https://github.com/user-attachments/assets/4285aa72-fb02-43f6-b146-4a1b78e07113" />
+
+*The row itself, captured in the Chinese UI — the strip follows the Harness locale.*
+
 ```
 ⚡ 12.3K tok/s · 88%              Balance ¥1,234.56 · This chat 12.3K tok · 1m24s · 146 tok/s
 └────── built-in stats (order 0) ─┘ └────────────── this plugin (order 10) ──────────────┘
@@ -344,6 +348,10 @@ the smallest possible plugin.
 - **Storage used** — measured size and entry count for the ledger / running-time records / legacy
   ledger / display preferences, plus a total and a share of quota; it turns into an amber warning
   once the quota is full.
+
+<img width="620" alt="The eight summary rows: total tokens 384,301,631 · recorded time 2h21m · average 45.3K tok/s · average output 261 tok/s · cache hit 99.6% · spend ¥18.21 · per million tokens ¥0.04 · per ten million tokens ¥0.47" src="https://github.com/user-attachments/assets/1fa7a8e2-95d7-4c8f-9892-7d6abe30b2f5" />
+
+*The eight summary rows, on real data.*
 
 Changes take effect immediately — the status row and the settings page share one snapshot store.
 Clearing keeps the "already recorded for each session" memory and the balance baseline, so it
