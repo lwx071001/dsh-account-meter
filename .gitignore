@@ -1,0 +1,12 @@
+# 官方源码 / 文档的摘录，只留在本机，不随仓库发布（见 README「目录」一节）。
+# 它们是随 Harness 包一起发布的 DeepSeek 自己的实现与文档，不是本项目的代码；
+# 公开仓库不转发他人代码。
+tools/account-controller-README.md
+tools/usage-projection.js
+tools/session-stats-projection.js
+tools/host-runner-README.md
+
+# 操作系统杂物
+Thumbs.db
+Desktop.ini
+.DS_Store

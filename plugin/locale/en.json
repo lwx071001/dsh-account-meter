@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Account Balance",
+    "description": "Shows the remaining DeepSeek account balance and this conversation's token total, running time and tokens per second under the composer."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "账户余额",
+    "description": "在输入框下方实时显示 DeepSeek 账户剩余金额、本对话 token 总量、运行时长与每秒 token 数。"
+  }
+}
