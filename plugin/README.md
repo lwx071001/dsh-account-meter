@@ -332,15 +332,21 @@ null（"没有可相除的提示词"），而不是一个自信的 0%。
 
 ## 安装（在当前 profile，一次性，永久生效）
 
+**前提**：你已经在用 DSH Harness（Web UI）。克隆到任意目录后，把 `plugin/` 装进当前 profile ——
+`target` 换成**你自己的克隆路径**（仓库根目录的下一级就是 `plugin/`）：
+
 ```
-plugin_manager  action: install_bundle   target: F:\CaelumProject\dsh\account-balance\plugin
+git clone https://github.com/lwx071001/dsh-account-meter.git
+
+plugin_manager  action: install_bundle   target: <你的克隆路径>/plugin
 ```
 
 安装器负责 pnpm 安装、选入 `dsh.profile.bundles`、接入 bundle 自带的 patch 行 —— **不要**手写
 profile 的 `package.json` / `cordis.patch.yml`，也不要在 profile 目录里跑 pnpm。也可以走侧边栏
 **Plugins** 页面「添加」。
 
-**本插件已装在本机**（profile `desktop`），并且是 **link** 安装。
+> **本机备注（不是通用步骤）**：这台机器的 profile `desktop` 已装好，而且是 **link** 安装 ——
+> 改 `client.js` 后刷新页面即生效，不需要重装、不需要重启 Harness。
 
 ## 安装后核对
 

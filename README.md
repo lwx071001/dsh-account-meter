@@ -1,5 +1,8 @@
 # account-balance — DSH 插件：余额 · token · 时长 · 速率 · 用量统计
 
+> **这是什么**：**DSH Harness Web UI** 的客户端插件（bundle 形态，MIT 许可）。需要你已经有一个
+> 可用的 Harness —— 它不自带数据源，四个数字全部读自 Harness 自己的余额接口与 token 投影。
+
 在 Harness Web UI **输入框下方那条统计带**里（内建 token 药丸右侧）显示四个实时数字，
 并在**设置 → 账户与统计**里提供开关与一份用量台账（分时 / 每天 / 每月曲线，总 token、
 平均每秒总 token、平均每秒输出 token、每百万与每千万 token 的金额；分时图可任选一天与时段）。
@@ -18,12 +21,31 @@
 
 ## 安装
 
-```
-plugin_manager  action: install_bundle  target: F:\CaelumProject\dsh\account-balance\plugin
-```
+**前提**：你已经在用 DSH Harness（Web UI）。这个插件离开它没有意义 —— 它读的是 Harness 自己的
+余额接口与 token 投影，不自己去任何地方取数。
 
-本机（profile `desktop`）**已装好**，且是 **link** 安装 —— 改 `client.js` 后**刷新页面**即生效。
-浏览器半在页面启动时按 `window.__DSH_BOOT__` 拉取注册，运行中的页面不会自己换代码。
+1. 克隆到任意目录：
+
+   ```
+   git clone https://github.com/lwx071001/dsh-account-meter.git
+   ```
+
+2. 让 agent 把这个目录下的 `plugin/` 作为 bundle 装进当前 profile —— `target` 换成**你自己的
+   克隆路径**（仓库根目录的下一级就是 `plugin/`）：
+
+   ```
+   plugin_manager  action: install_bundle  target: <你的克隆路径>/plugin
+   ```
+
+   安装器负责 pnpm 安装、选入 `dsh.profile.bundles`、接入 bundle 自带的 patch 行 —— **不要**手写
+   profile 的 `package.json` / `cordis.patch.yml`。也可以走侧边栏 **Plugins** 页面「添加」。
+
+3. **刷新页面（F5）**。输入框下方那条统计带上会多出余额、本对话 token、运行时长与每秒 token；
+   **设置 → 账户与统计**里出现开关与统计页。逐条核对清单见 [`plugin/README.md`](plugin/README.md)。
+
+> **本机备注（不是通用步骤）**：这台机器的 profile `desktop` 已装好，而且是 **link** 安装 ——
+> 改 `client.js` 后刷新页面即生效，不需要重装、不需要重启 Harness。浏览器半在页面启动时按
+> `window.__DSH_BOOT__` 拉取注册，运行中的页面不会自己换代码。
 
 ## 目录
 
@@ -372,3 +394,7 @@ README），所以不需要重启 Harness，也不需要重新安装。
 - 新会话尚未跑过请求时 token 显示 `—`；运行不足 1 秒不产生速率（避免首秒虚高），解码段不足 1 秒
   同样不产生输出速率。
 - 渲染位 `conversation.composer.dock` 是 `scope: session`，无会话的页面不显示。
+
+## 许可
+
+[MIT](LICENSE) © 2026 lwx071001 —— 随便用、随便改、随便再发，保留这份声明即可，不担保任何东西。
