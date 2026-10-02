@@ -1,3 +1,5 @@
+<img width="434" height="213" alt="屏幕截图 2026-10-02 211227" src="https://github.com/user-attachments/assets/1fa7a8e2-95d7-4c8f-9892-7d6abe30b2f5" />
+<img width="242" height="17" alt="屏幕截图 2026-10-02 211211" src="https://github.com/user-attachments/assets/4285aa72-fb02-43f6-b146-4a1b78e07113" />
 # account-balance — DSH 插件：余额 · token · 时长 · 速率 · 用量统计
 
 > **这是什么**：**DSH Harness Web UI** 的客户端插件（bundle 形态，MIT 许可）。需要你已经有一个
